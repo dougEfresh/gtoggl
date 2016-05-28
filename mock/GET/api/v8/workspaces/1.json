@@ -1,0 +1,16 @@
+{
+    "data": {
+        "id":1,
+        "name":"John's personal ws",
+        "premium":true,
+        "admin":true,
+        "default_hourly_rate":150,
+        "default_currency":"USD",
+        "only_admins_may_create_projects":false,
+        "only_admins_see_billable_rates":false,
+        "rounding":1,
+        "rounding_minutes":15,
+        "at":"2013-08-28T16:22:21+03:00",
+        "logo_url":"my_logo.png"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "data":{
+        "id":3,
+        "api_token":"808lolae4eab897cce9729a53642124effe",
+        "default_wid":983493,
+        "email":"signup@blah.com",
+        "fullname":"Test User",
+        "jquery_timeofday_format":"",
+        "jquery_date_format":"",
+        "timeofday_format":"",
+        "date_format":"",
+        "store_start_and_stop_time":false,
+        "beginning_of_week":0,
+        "sidebar_piechart":false,
+        "timeline_experiment":false,
+        "new_blog_post":{},
+        "invitation":{}
+    }
+}

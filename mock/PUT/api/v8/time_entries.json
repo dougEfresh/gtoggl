@@ -1,0 +1,13 @@
+{
+    "data":
+    {
+        "id":3,
+        "pid":123,
+        "wid":777,
+        "billable":false,
+        "start":"2013-03-05T07:58:58.000Z",
+        "duration":1200,
+        "description":"Meeting with possible clients",
+        "tags":["billed"]
+    }
+}

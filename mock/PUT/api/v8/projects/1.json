@@ -1,0 +1,13 @@
+{
+    "data": {
+        "id":1,
+        "wid":777,
+        "cid":123398,
+        "name":"new name",
+        "billable":false,
+        "active":true,
+        "at":"2013-03-06T12:15:37+00:00",
+        "template":true,
+        "color":"6"
+    }
+}
