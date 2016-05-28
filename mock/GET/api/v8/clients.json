@@ -1,0 +1,15 @@
+[
+    {
+        "id":1,
+        "wid":777,
+        "name":"Id 1",
+        "notes":"something about the client",
+        "at":"2013-02-26T08:55:28+00:00"
+    }, {
+        "id":2,
+        "wid":777,
+        "name":"Id 2",
+        "notes":"Really cool people",
+        "at":"2013-03-26T08:55:28+00:00"
+    }
+]

@@ -1,0 +1,27 @@
+[
+ {
+        "id":1,
+        "wid":777,
+        "cid":123397,
+        "name":"Id 1",
+        "billable":false,
+        "is_private":true,
+        "active":true,
+        "at":"2013-03-06T12:15:37+00:00",
+        "template":true,
+        "color": "5"
+    },
+  {
+        "id":2,
+        "wid":777,
+        "cid":123397,
+        "name":"Id 2",
+        "billable":false,
+        "is_private":true,
+        "active":true,
+        "at":"2013-03-06T12:15:37+00:00",
+        "template":true,
+        "color": "5"
+    }
+
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "name": "Id 1",
+    "profile": 13,
+    "premium": true,
+    "admin": true,
+    "default_hourly_rate": 0,
+    "default_currency": "USD",
+    "only_admins_may_create_projects": false,
+    "only_admins_see_billable_rates": false,
+    "only_admins_see_team_dashboard": false,
+    "projects_billable_by_default": false,
+    "rounding": 0,
+    "rounding_minutes": 0,
+    "api_token": "7d475340128f8ac760a532c2c1d60998",
+    "at": "2016-01-27T23:18:51+00:00",
+    "logo_url": "https://assets.toggl.com/logos/be108a1b6e916c0b6880b8b56aeef235.png",
+    "ical_url": "/ical/workspace_user/8138a50b0c407841b5a9b706eeee01a7",
+    "ical_enabled": true,
+    "subscription": {
+      "workspace_id": 0,
+      "deleted_at": null,
+      "created_at": "0001-01-01T00:00:00Z",
+      "updated_at": null,
+      "vat_valid": false,
+      "vat_validated_at": null,
+      "vat_invalid_accepted_at": null,
+      "vat_invalid_accepted_by": null,
+      "description": "Old Pro monthly",
+      "vat_applicable": false
+    }
+  },
+  {
+    "id": 2,
+    "name": "Id 2",
+    "profile": 0,
+    "premium": false,
+    "admin": false,
+    "default_hourly_rate": 0,
+    "default_currency": "USD",
+    "only_admins_may_create_projects": false,
+    "only_admins_see_billable_rates": false,
+    "only_admins_see_team_dashboard": false,
+    "projects_billable_by_default": true,
+    "rounding": 1,
+    "rounding_minutes": 0,
+    "at": "2016-01-29T16:27:18+00:00",
+    "ical_enabled": true,
+    "subscription": {
+      "workspace_id": 0,
+      "deleted_at": null,
+      "created_at": "0001-01-01T00:00:00Z",
+      "updated_at": null,
+      "vat_valid": false,
+      "vat_validated_at": null,
+      "vat_invalid_accepted_at": null,
+      "vat_invalid_accepted_by": null,
+      "description": "Free",
+      "vat_applicable": false
+    }
+  }
+]

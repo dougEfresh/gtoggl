@@ -1,0 +1,15 @@
+{
+    "data":{
+        "id":1,
+        "wid":777,
+        "pid":193791,
+        "tid":13350500,
+        "billable":false,
+        "start":"2013-02-27T01:24:00+00:00",
+        "stop":"2013-02-27T07:24:00+00:00",
+        "duration":21600,
+        "description":"Some serious work",
+        "tags":["billed"],
+        "at":"2013-02-27T13:49:18+00:00"
+    }
+}
