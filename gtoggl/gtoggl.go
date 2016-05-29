@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"gopkg.in/dougEfresh/gtoggl.v8"
 	"gopkg.in/dougEfresh/toggl-client.v8"
+	"gopkg.in/dougEfresh/toggl-http-client.v8"
 	"gopkg.in/dougEfresh/toggl-user.v8"
 	"gopkg.in/dougEfresh/toggl-workspace.v8"
 	"os"
@@ -27,7 +28,7 @@ func main() {
 	var token = flag.String("t", "", "Toggl API token: https://www.toggl.com/app/profile")
 	var command = flag.String("c", "workspace", "command: workspace,client,project...etc ")
 	flag.Parse()
-	tc, err := gtoggl.NewClient(*token, gtoggl.SetTraceLogger(&debugger{debug: *debug}))
+	tc, err := gtoggl.NewClient(*token, ghttp.SetTraceLogger(&debugger{debug: *debug}))
 	if err != nil {
 		fmt.Fprint(os.Stderr, "A token is required\n")
 		flag.Usage()
@@ -51,10 +52,10 @@ func handleError(error error) {
 	}
 }
 
-func client(tc *gtoggl.TogglHttpClient, args []string) {
-	c, err := gclient.NewClient(tc)
+func client(tc *gtoggl.TogglClient, args []string) {
+	c := tc.TClient
 	var client gclient.Client
-	handleError(err)
+	var err error
 	if len(args) == 0 || args[0] == "list" {
 		clients, err := c.List()
 		handleError(err)
@@ -97,9 +98,9 @@ func client(tc *gtoggl.TogglHttpClient, args []string) {
 
 }
 
-func workspace(tc *gtoggl.TogglHttpClient, args []string) {
-	wsc, err := gworkspace.NewClient(tc)
-	handleError(err)
+func workspace(tc *gtoggl.TogglClient, args []string) {
+	wsc := tc.WorkspaceClient
+	var err error
 	if len(args) == 0 || args[0] == "list" {
 		w, err := wsc.List()
 		handleError(err)
@@ -129,9 +130,9 @@ func workspace(tc *gtoggl.TogglHttpClient, args []string) {
 	}
 }
 
-func user(tc *gtoggl.TogglHttpClient, args []string) {
-	wsc, err := guser.NewClient(tc)
-	handleError(err)
+func user(tc *gtoggl.TogglClient, args []string) {
+	wsc := tc.UserClient
+	var err error
 	if len(args) == 0 || args[0] == "get" {
 		w, err := wsc.Get(false)
 		handleError(err)
