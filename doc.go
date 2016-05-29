@@ -13,5 +13,6 @@ Example:
             }
             timeentry, _:= tc.TimeentryClient.Get(1)
 	}
+
 */
 package gtoggl

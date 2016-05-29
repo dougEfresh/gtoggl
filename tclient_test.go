@@ -39,7 +39,6 @@ func togglClient(t *testing.T) *TogglClient {
 }
 
 func TestClientCreate(t *testing.T) {
-
 	tClient := togglClient(t)
 	if tClient.UserClient == nil {
 		t.Fatal("No User Client")
