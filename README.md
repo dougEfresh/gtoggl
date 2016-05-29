@@ -11,7 +11,7 @@
 **Example:**
 
 ```sh
-go get gopkg.in/dougEfresh/gtoggl.v8 gopkg.in/dougEfresh/toggl-timeentry.v8
+go get gopkg.in/dougEfresh/gtoggl.v8
 ```
 
 
@@ -20,13 +20,10 @@ import "gopkg.in/dougEfresh/gtoggl.v8"
 import "ggopkg.in/dougEfresh/toggl-timeentry.v8"
 
 func main() {
-	thc, err := gtoggl.NewClient("token")
-	...
-	tc, err := gtimeentry.NewClient(thc)
-	...
-	timeentry,err := tc.Get(1)
+	tc, err := gtoggl.NewClient("token")
 	if err == nil {
-		panic(err)
-	}
+    		panic(err)
+    }
+	timeentry, _:= tc.TimeentryClient.Get(1)	
 }
 ```
