@@ -17,14 +17,13 @@ go get gopkg.in/dougEfresh/gtoggl.v8
 
 ```go
 import "gopkg.in/dougEfresh/gtoggl.v8"
-import "ggopkg.in/dougEfresh/toggl-timeentry.v8"
 
 func main() {
-	tc, err := gtoggl.NewClient("token")
-	if err == nil {
-    		panic(err)
+    tc, err := gtoggl.NewClient("token")
+    if err == nil {
+    	panic(err)
     }
-	timeentry, _:= tc.TimeentryClient.Get(1)	
+    timeentry, _:= tc.TimeentryClient.Get(1)
 }
 ``` 
 
