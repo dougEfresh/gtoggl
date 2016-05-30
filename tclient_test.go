@@ -1,15 +1,14 @@
 package gtoggl
 
 import (
-	"testing"
-	"net/http"
-	"io/ioutil"
 	"bytes"
 	"gopkg.in/dougEfresh/toggl-http-client.v8"
+	"io/ioutil"
+	"net/http"
+	"testing"
 )
 
 type mockTransport struct {
-
 }
 
 var nullResponse = []byte("")
@@ -31,7 +30,6 @@ func mockClient(t *testing.T) *TogglClient {
 	}
 	return client
 }
-
 
 func togglClient(t *testing.T) *TogglClient {
 	client := mockClient(t)
