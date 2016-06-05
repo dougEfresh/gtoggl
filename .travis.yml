@@ -10,4 +10,5 @@ os:
 script:
   - go build -race
   - go test -v 
+  - cd gtoggle ; go build
   - $HOME/gopath/bin/goveralls -service=travis-ci
