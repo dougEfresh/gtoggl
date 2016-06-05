@@ -29,7 +29,7 @@ import (
 var ulistCmd = &cobra.Command{
 	Use:   "user",
 	Short: "user commands",
-	Long: `sasd`,
+	Long: ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.UserClient.Get(false))
 	},

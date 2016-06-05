@@ -29,10 +29,14 @@ func main() {
 
 ## Supported Endpoints 
 
- [Time Entry](https://github.com/dougEfresh/toggl-timeeentry)
- [User](https://github.com/dougEfresh/toggl-user)
- [Workspace](https://github.com/dougEfresh/toggl-workspace)
- [Project](https://github.com/dougEfresh/toggl-project)
- [Client](https://github.com/dougEfresh/toggl-client)
+[Time Entry](https://github.com/dougEfresh/toggl-timeeentry)
+
+[User](https://github.com/dougEfresh/toggl-user)
+
+[Workspace](https://github.com/dougEfresh/toggl-workspace)
+
+[Project](https://github.com/dougEfresh/toggl-project)
+
+[Client](https://github.com/dougEfresh/toggl-client)
  
  
