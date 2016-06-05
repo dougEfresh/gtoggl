@@ -43,10 +43,19 @@ var urCmd = &cobra.Command{
 		printJson(tc.UserClient.ResetToken())
 	},
 }
+var meCmd = &cobra.Command{
+	Use:   "me",
+	Short: "get my info",
+	Long: ``,
+	Run: func(cmd *cobra.Command, args []string) {
+		printJson(tc.UserClient.Get(false))
+	},
+}
 
 func init() {
 	RootCmd.AddCommand(ulistCmd)
 	ulistCmd.AddCommand(urCmd)
+	ulistCmd.AddCommand(meCmd)
 }
 
 
