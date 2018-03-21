@@ -1,0 +1,26 @@
+title:
+  name: Name
+  description: "Something good"
+user: dougEfresh
+project: lambdazap
+installation: >-
+  ```shell
+
+  $ go get -u github.com/dougEfresh/
+
+  ```
+quickStart:
+  code: |
+    ```go
+
+    ```
+  description: ""
+examples:
+  - "Example 1"
+  - "Example 2"
+tests:
+  - |
+    ```shell
+    $ go test -v
+
+    ```
