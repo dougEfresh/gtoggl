@@ -28,7 +28,7 @@ import (
 var plistCmd = &cobra.Command{
 	Use:   "project",
 	Short: "A brief description of your command",
-	Long: `sasd`,
+	Long:  `sasd`,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.ProjectClient.List())
 	},
@@ -37,9 +37,9 @@ var plistCmd = &cobra.Command{
 var pgetCmd = &cobra.Command{
 	Use:   "get",
 	Short: "get a workspace by id",
-	Long: ``,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		id,err := cmd.Flags().GetUint64("id")
+		id, err := cmd.Flags().GetUint64("id")
 		if err != nil {
 			os.Exit(-1)
 		}
@@ -49,6 +49,6 @@ var pgetCmd = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(plistCmd)
-	pgetCmd.Flags().Uint64P("id","i",0,"id of resource")
+	pgetCmd.Flags().Uint64P("id", "i", 0, "id of resource")
 	plistCmd.AddCommand(pgetCmd)
 }

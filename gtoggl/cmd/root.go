@@ -24,9 +24,9 @@ import (
 	"fmt"
 	"os"
 
+	"encoding/json"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"encoding/json"
 	"gopkg.in/dougEfresh/gtoggl.v8"
 	"gopkg.in/dougEfresh/toggl-http-client.v8"
 )
@@ -37,14 +37,14 @@ var cfgFile string
 var RootCmd = &cobra.Command{
 	Use:   "gtoggl",
 	Short: "Toggl API cli",
-	Long: `Toggl CLI`,
+	Long:  `Toggl CLI`,
 	PreRun: func(cmd *cobra.Command, args []string) {
 		fmt.Println("asdasdsad")
 		//return errors.New("some random error")
 	},
-// Uncomment the following line if your bare application
-// has an action associated with it:
-//	Run: func(cmd *cobra.Command, args []string) { },
+	// Uncomment the following line if your bare application
+	// has an action associated with it:
+	//	Run: func(cmd *cobra.Command, args []string) { },
 }
 
 // Execute adds all child commands to the root command sets flags appropriately.
@@ -62,15 +62,15 @@ func init() {
 	// Here you will define your flags and configuration settings.
 	// Cobra supports Persistent Flags, which, if defined here,
 	// will be global for your application.
-	RootCmd.PersistentFlags().BoolP("debug","d",false,"Debuging")
-	RootCmd.PersistentFlags().StringP("token","t","","api token")
+	RootCmd.PersistentFlags().BoolP("debug", "d", false, "Debuging")
+	RootCmd.PersistentFlags().StringP("token", "t", "", "api token")
 	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.gtoggl.yaml)")
-	viper.BindPFlag("token",RootCmd.PersistentFlags().Lookup("token"))
+	viper.BindPFlag("token", RootCmd.PersistentFlags().Lookup("token"))
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 
-
 }
+
 type debugger struct {
 	debug bool
 }
@@ -80,11 +80,12 @@ func (l *debugger) Printf(format string, v ...interface{}) {
 		fmt.Printf(format, v)
 	}
 }
+
 var tc *gtoggl.TogglClient
 
-func getClient(d bool) *gtoggl.TogglClient  {
-	tc,err := gtoggl.NewClient(viper.GetString("token"),ghttp.SetTraceLogger(&debugger{debug: d}))
-	if err !=  nil {
+func getClient(d bool) *gtoggl.TogglClient {
+	tc, err := gtoggl.NewClient(viper.GetString("token"), ghttp.SetTraceLogger(&debugger{debug: d}))
+	if err != nil {
 
 	}
 	return tc
@@ -92,11 +93,11 @@ func getClient(d bool) *gtoggl.TogglClient  {
 
 func printJson(a interface{}, err error) {
 	if err != nil {
-		fmt.Fprintf(os.Stderr,"Error %s",err)
+		fmt.Fprintf(os.Stderr, "Error %s", err)
 		os.Exit(-1)
 	}
 	j, _ := json.Marshal(a)
-	fmt.Fprintf(os.Stdout,"%+s\n",j)
+	fmt.Fprintf(os.Stdout, "%+s\n", j)
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -106,19 +107,19 @@ func initConfig() {
 	}
 
 	viper.SetConfigName(".gtoggl") // name of config file (without extension)
-	viper.AddConfigPath("$HOME")  // adding home directory as first search path
-	viper.AutomaticEnv()          // read in environment variables that match
-	d,_ := RootCmd.Flags().GetBool("debug");
+	viper.AddConfigPath("$HOME")   // adding home directory as first search path
+	viper.AutomaticEnv()           // read in environment variables that match
+	d, _ := RootCmd.Flags().GetBool("debug")
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
 		if d {
-			fmt.Fprintf(os.Stderr,"Using config file:%s\n", viper.ConfigFileUsed())
+			fmt.Fprintf(os.Stderr, "Using config file:%s\n", viper.ConfigFileUsed())
 		}
 	}
 
-	if h,_ := RootCmd.Flags().GetBool("help"); !h {
+	if h, _ := RootCmd.Flags().GetBool("help"); !h {
 		if viper.GetString("token") == "" {
-			fmt.Fprintf(os.Stderr,"Token Required\n")
+			fmt.Fprintf(os.Stderr, "Token Required\n")
 			RootCmd.Help()
 			os.Exit(-1)
 		}

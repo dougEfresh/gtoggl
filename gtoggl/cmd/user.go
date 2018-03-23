@@ -21,15 +21,14 @@
 package cmd
 
 import (
-
-	"github.com/spf13/cobra"
 	_ "fmt"
+	"github.com/spf13/cobra"
 )
 
 var ulistCmd = &cobra.Command{
 	Use:   "user",
 	Short: "user commands",
-	Long: ``,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.UserClient.Get(false))
 	},
@@ -38,7 +37,7 @@ var ulistCmd = &cobra.Command{
 var urCmd = &cobra.Command{
 	Use:   "reset",
 	Short: "reset token",
-	Long: ``,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.UserClient.ResetToken())
 	},
@@ -46,7 +45,7 @@ var urCmd = &cobra.Command{
 var meCmd = &cobra.Command{
 	Use:   "me",
 	Short: "get my info",
-	Long: ``,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.UserClient.Get(false))
 	},
@@ -57,5 +56,3 @@ func init() {
 	ulistCmd.AddCommand(urCmd)
 	ulistCmd.AddCommand(meCmd)
 }
-
-

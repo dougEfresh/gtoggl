@@ -54,4 +54,3 @@ func init() {
 	cgetCmd.Flags().Uint64P("id", "i", 0, "id of resource")
 	clistCmd.AddCommand(cgetCmd)
 }
-

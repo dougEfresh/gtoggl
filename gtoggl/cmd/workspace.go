@@ -21,7 +21,6 @@
 package cmd
 
 import (
-
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -29,7 +28,7 @@ import (
 var wlistCmd = &cobra.Command{
 	Use:   "workspace",
 	Short: "A brief description of your command",
-	Long: `sasd`,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		printJson(tc.WorkspaceClient.List())
 	},
@@ -38,9 +37,9 @@ var wlistCmd = &cobra.Command{
 var wgetCmd = &cobra.Command{
 	Use:   "get",
 	Short: "get a workspace by id",
-	Long: ``,
+	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		id,err := cmd.Flags().GetUint64("id")
+		id, err := cmd.Flags().GetUint64("id")
 		if err != nil {
 			os.Exit(-1)
 		}
@@ -50,6 +49,6 @@ var wgetCmd = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(wlistCmd)
-	wgetCmd.Flags().Uint64P("id","i",0,"id of resource")
+	wgetCmd.Flags().Uint64P("id", "i", 0, "id of resource")
 	wlistCmd.AddCommand(wgetCmd)
 }
