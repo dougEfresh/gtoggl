@@ -25,10 +25,11 @@ import (
 	"os"
 
 	"encoding/json"
+
+	"github.com/dougEfresh/gtoggl"
+	"github.com/dougEfresh/gtoggl-api/gthttp"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"gopkg.in/dougEfresh/gtoggl.v8"
-	"gopkg.in/dougEfresh/toggl-http-client.v8"
 )
 
 var cfgFile string
@@ -84,7 +85,7 @@ func (l *debugger) Printf(format string, v ...interface{}) {
 var tc *gtoggl.TogglClient
 
 func getClient(d bool) *gtoggl.TogglClient {
-	tc, err := gtoggl.NewClient(viper.GetString("token"), ghttp.SetTraceLogger(&debugger{debug: d}))
+	tc, err := gtoggl.NewClient(viper.GetString("token"), gthttp.SetTraceLogger(&debugger{debug: d}))
 	if err != nil {
 
 	}
