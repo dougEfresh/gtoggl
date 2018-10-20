@@ -9,6 +9,6 @@ os:
 script:
   - go build -race
   - go test -v ./...  -coverprofile=cover.out
-  - cd gtoggle ; go build
+  - cd gtoggl ; go build
 after_success:
   - bash <(curl -s https://codecov.io/bash)
