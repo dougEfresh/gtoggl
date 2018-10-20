@@ -2,10 +2,11 @@ package gtoggl
 
 import (
 	"bytes"
-	"gopkg.in/dougEfresh/toggl-http-client.v8"
 	"io/ioutil"
 	"net/http"
 	"testing"
+
+	"github.com/dougEfresh/gtoggl-api/gthttp"
 )
 
 type mockTransport struct {
@@ -24,7 +25,7 @@ func (t *mockTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 
 func mockClient(t *testing.T) *TogglClient {
 	httpClient := &http.Client{Transport: &mockTransport{}}
-	client, err := NewClient("abc1234567890def", ghttp.SetHttpClient(httpClient))
+	client, err := NewClient("abc1234567890def", gthttp.SetHttpClient(httpClient))
 	if err != nil {
 		panic(err)
 	}
