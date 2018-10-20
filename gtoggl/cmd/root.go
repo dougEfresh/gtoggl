@@ -78,7 +78,7 @@ type debugger struct {
 
 func (l *debugger) Printf(format string, v ...interface{}) {
 	if l.debug {
-		fmt.Printf(format, v)
+		fmt.Printf(format, v...)
 	}
 }
 
